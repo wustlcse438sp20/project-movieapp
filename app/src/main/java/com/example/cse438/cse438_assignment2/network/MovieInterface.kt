@@ -12,7 +12,7 @@ interface MovieInterface {
 
     //search by parameters
     @GET("search")
-    suspend fun getTrackBySearch(@Query("q") q: String)
+    suspend fun getTrendBySearch(@Query("q") q: String)
             : Response<Data>;
 
     @GET("trending/movie/week?api_key=8f589d13ad818bf33b851bb51b1184d6")
