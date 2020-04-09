@@ -25,4 +25,24 @@
     <string name="email">EMAIL: xxx@xxx.com</string>
     <string name="ChangePwd">CHANGE PASSWORD</string>
     <string name="signout">Sign Out</string>
+    <string name="inputEmail">Email Address</string>
+    <string name="inputUsername">Username</string>
+    <string name="inputPassword">Password</string>
+    <string name="signupsubmit">Sign Up</string>
+    <string name="loginsubmit">Log In</string>
+    <string name="logout">LOGOUT</string>
+    <string name="showUsername">Name: username</string>
+    <string name="showLogin">LOGIN</string>
+    <string name="showSignup">SIGN UP</string>
+    <string name="cancel">CANCEL</string>
+    <string name="changepassword">Change Password</string>
+    <string name="title_activity_password">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>
