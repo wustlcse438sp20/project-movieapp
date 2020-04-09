@@ -15,6 +15,6 @@ data class TrendingResult(
     val adult: Boolean,
     val overview: String,
     val poster_path: String,
-    val popularity: Long,
+    val popularity: Double,
     val media_type: String
 )

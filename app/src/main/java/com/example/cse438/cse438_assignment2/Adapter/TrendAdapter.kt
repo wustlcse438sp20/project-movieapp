@@ -33,8 +33,8 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         val context = itemView.getContext();
         trendNameView?.text = trendingResult.title
         trendid = trendingResult.id
-        url = trendingResult.poster_path
-        Picasso.get().load(trendingResult.poster_path).into(trendImgView)
+        url = "https://image.tmdb.org/t/p/w500" + trendingResult.poster_path
+        Picasso.get().load(url).into(trendImgView)
 //        itemView.setOnClickListener {
 //            val intent = Intent(context, ShowTrackActivity::class.java)
 //            intent.putExtra("trackid", trackid)

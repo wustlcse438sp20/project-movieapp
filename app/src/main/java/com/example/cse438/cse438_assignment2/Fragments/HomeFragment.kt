@@ -51,18 +51,18 @@ class HomeFragment : Fragment() {
 
 
         //observe the allEvents LiveData
-        trendViewModel!!.trendList.observe(this, Observer {
+        trendViewModel.trendList.observe(this, Observer {
             trendList.clear()
-            trendList.addAll(it.results.data)
+            trendList.addAll(it.results)
             adapter.notifyDataSetChanged()
         })
 
         trendViewModel.getTrend()
-        trendViewModel!!.trendList.observe(this, Observer {
-            trendList.clear()
-            trendList.addAll(it.results.data)
-            adapter.notifyDataSetChanged()
-        })
+//        trendViewModel.trendList.observe(this, Observer {
+//            trendList.clear()
+//            trendList.addAll(it.results.data)
+//            adapter.notifyDataSetChanged()
+//        })
 
 
 //        search_button.setOnClickListener {
