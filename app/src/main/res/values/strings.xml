@@ -21,4 +21,8 @@
     <string name="search">Go</string>
     <string name="position">0</string>
     <string name="Add">Add</string>
+    <string name="username">USERNAME: Username</string>
+    <string name="email">EMAIL: xxx@xxx.com</string>
+    <string name="ChangePwd">CHANGE PASSWORD</string>
+    <string name="signout">Sign Out</string>
 </resources>
