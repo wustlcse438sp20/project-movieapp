@@ -14,11 +14,4 @@ object ApiClient {
             .addConverterFactory(MoshiConverterFactory.create())
             .build().create(MovieInterface::class.java)
     }
-
-//    fun makeRetrofitServicewithParameter(url: String): TrackInterface {
-//        return Retrofit.Builder()
-//            .baseUrl(url)
-//            .addConverterFactory(MoshiConverterFactory.create())
-//            .build().create(TrackInterface::class.java)
-//    }
 }

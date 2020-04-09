@@ -19,4 +19,6 @@ interface MovieInterface {
     suspend fun getTrending()
             : Response<Trending>
 
+    @GET("chart")
+    suspend fun getChart(): Response<Chart>;
 }

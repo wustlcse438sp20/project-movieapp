@@ -15,20 +15,23 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.Adapter.TrackListAdapter
+import com.example.cse438.cse438_assignment2.Adapter.TrendListAdapter
 import com.example.cse438.cse438_assignment2.Data.Track
+import com.example.cse438.cse438_assignment2.Data.TrendingResult
 import com.example.cse438.cse438_assignment2.R
+import com.example.cse438.cse438_assignment2.TrendViewModel
 import com.example.cse438_rest_studio.TrackViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment() {
 
-    lateinit var trackViewModel: TrackViewModel
+    lateinit var trendViewModel: TrendViewModel
     lateinit var searchButton: SearchView
     lateinit var searchBox: EditText
     lateinit var imageView: ImageView
 
-    var trackList: ArrayList<Track> = ArrayList()
+    var trendList: ArrayList<TrendingResult> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -39,35 +42,35 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        trackViewModel = ViewModelProviders.of(this).get(TrackViewModel::class.java)
+        trendViewModel = ViewModelProviders.of(this).get(TrendViewModel::class.java)
         //set recycler view
         val recyclerView = getView()!!.findViewById<RecyclerView>(R.id.recyclerView)
-        val adapter = TrackListAdapter(trackList as ArrayList<Track>)
+        val adapter = TrendListAdapter(trendList as ArrayList<TrendingResult>)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = GridLayoutManager(this.context, 2)
 
 
         //observe the allEvents LiveData
-        trackViewModel!!.trackList.observe(this, Observer {
-            trackList.clear()
-            trackList.addAll(it.data)
+        trendViewModel!!.trendList.observe(this, Observer {
+            trendList.clear()
+            trendList.addAll(it.results.data)
             adapter.notifyDataSetChanged()
         })
 
-        trackViewModel.getChart()
-        trackViewModel!!.chartList.observe(this, Observer {
-            trackList.clear()
-            trackList.addAll(it.tracks.data)
+        trendViewModel.getTrend()
+        trendViewModel!!.trendList.observe(this, Observer {
+            trendList.clear()
+            trendList.addAll(it.results.data)
             adapter.notifyDataSetChanged()
         })
 
 
-        search_button.setOnClickListener {
-            val input: String = search_box.text.toString()
-            trackViewModel.getTrackBySearch(input)
-
-
-        }
+//        search_button.setOnClickListener {
+//            val input: String = search_box.text.toString()
+//            trackViewModel.getTrackBySearch(input)
+//
+//
+//        }
 
 
     }
@@ -83,4 +86,3 @@ class HomeFragment : Fragment() {
 
 
 }
-
