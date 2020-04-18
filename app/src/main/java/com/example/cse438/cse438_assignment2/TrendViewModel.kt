@@ -23,4 +23,8 @@ class TrendViewModel(application: Application) : AndroidViewModel(application) {
     fun getTrend() {
         trendRepository.getTrending(trendList)
     }
+
+    fun getMovieBySearch(param: String) {
+        trendRepository.getMovieBySearch(trendList,param)
+    }
 }

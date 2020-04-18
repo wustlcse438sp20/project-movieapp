@@ -46,4 +46,33 @@ class MovieRepository {
         }
     }
 
+    fun getMovieBySearch(resBody: MutableLiveData<Trending>, param: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val response: Response<Trending>
+
+            response = service.getMovieBySearch(param)
+
+            //when the coroutine finishes
+            withContext(Dispatchers.Main) {
+                try {
+                    //success case
+                    if (response.isSuccessful) {
+                        println(" is the size")
+                        resBody.value = response.body()
+
+                    } else {
+                        //response error
+                        println("HTTP error")
+                    }
+                } catch (e: HttpException) {
+                    //http exception
+                    println("HTTP Exception")
+                } catch (e: Throwable) {
+                    //error
+                    println("Error")
+                }
+            }
+        }
+    }
+
 }
