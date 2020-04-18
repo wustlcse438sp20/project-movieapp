@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowTrackActivity">
+    tools:context=".ShowMovieActivity">
 
 
     <TextView
-        android:id="@+id/trackDetailName"
+        android:id="@+id/movieDetailName"
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
@@ -17,13 +17,13 @@
         android:text=""
         android:textSize="30sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/trackDetailImg"
+        app:layout_constraintBottom_toTopOf="@+id/movieDetailImg"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/trackDetailImg"
+        android:id="@+id/movieDetailImg"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:gravity="center"
@@ -33,73 +33,73 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@id/trackDetailName" />
+        app:layout_constraintTop_toBottomOf="@id/movieDetailName" />
 
     <TextView
-        android:id="@+id/trackDetailArtist"
+        android:id="@+id/movieDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text=""
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/trackDetailTrackName"
+        app:layout_constraintBottom_toTopOf="@+id/movieDetailReleaseDate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/trackDetailImg" />
+        app:layout_constraintTop_toBottomOf="@id/movieDetailImg" />
 
     <TextView
-        android:id="@+id/trackDetailTrackName"
+        android:id="@+id/movieDetailReleaseDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text=""
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/trackDetailPosition"
+        app:layout_constraintBottom_toTopOf="@+id/movieDetailOverview"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/trackDetailArtist" />
+        app:layout_constraintTop_toBottomOf="@id/movieDetailTitle" />
 
     <TextView
-        android:id="@+id/trackDetailPosition"
+        android:id="@+id/movieDetailOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/trackDetailLength"
+        app:layout_constraintBottom_toTopOf="@+id/movieDetailLength"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trackDetailTrackName" />
+        app:layout_constraintTop_toBottomOf="@+id/movieDetailReleaseDate" />
 
     <TextView
-        android:id="@+id/trackDetailLength"
+        android:id="@+id/movieDetailLength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text=""
         android:textSize="15sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/trackDetailRelease"
+        app:layout_constraintBottom_toTopOf="@+id/movieDetailRelease"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trackDetailPosition" />
+        app:layout_constraintTop_toBottomOf="@+id/movieDetailOverview" />
 
     <TextView
-        android:id="@+id/trackDetailRelease"
+        android:id="@+id/movieDetailRelease"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/released_date"
         android:textSize="15sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/trackDetailRank"
+        app:layout_constraintBottom_toTopOf="@+id/movieDetailRank"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trackDetailLength" />
+        app:layout_constraintTop_toBottomOf="@+id/movieDetailLength" />
 
     <TextView
-        android:id="@+id/trackDetailRank"
+        android:id="@+id/movieDetailRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -109,7 +109,7 @@
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trackDetailRelease" />
+        app:layout_constraintTop_toBottomOf="@+id/movieDetailRelease" />
 
     <Button
         android:id="@+id/show_artist"
@@ -121,7 +121,7 @@
         android:layout_marginRight="8dp"
         android:onClick="showArtist"
         android:text="@string/showartpic"
-        app:layout_constraintBottom_toBottomOf="@+id/trackDetailRank"
+        app:layout_constraintBottom_toBottomOf="@+id/movieDetailRank"
         app:layout_constraintBottom_toTopOf="@+id/add_playlist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -11,7 +11,7 @@ import com.example.cse438.cse438_assignment2.Database.PlayList
 import com.squareup.picasso.Picasso
 
 import kotlinx.android.synthetic.main.activity_show_artist.*
-import kotlinx.android.synthetic.main.activity_show_track.*
+import kotlinx.android.synthetic.main.activity_show_movie.*
 import kotlinx.android.synthetic.main.content_show_artist.*
 
 class ShowArtistActivity : AppCompatActivity() {
