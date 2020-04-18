@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">cse438-assignment2</string>
+    <string name="app_name">Movie App</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -12,17 +12,17 @@
     <string name="released_date">Released: 2019-04/16</string>
     <string name="showartpic">Show Artist Picture</string>
 
-    <string name="name">Playlist Name</string>
-    <string name="disc">Playlist Description</string>
-    <string name="plgenre">Playlist Genre</string>
-    <string name="genre">Playlist Rating (Positive Integer)</string>
+    <string name="name">Watchlist Name</string>
+    <string name="disc">Watchlist Description</string>
+    <string name="plgenre">Watchlist Genre</string>
+    <string name="genre">Watchlist Rating (Positive Integer)</string>
     <string name="Submit">Submit</string>
-    <string name="hint">Input the Playlist Name to add to</string>
+    <string name="hint">Input the Watchlist Name to add to</string>
     <string name="search">Go</string>
     <string name="position">0</string>
     <string name="Add">Add</string>
-    <string name="username">USERNAME: Username</string>
-    <string name="email">EMAIL: xxx@xxx.com</string>
+    <string name="username">USERNAME: rhsiun</string>
+    <string name="email">EMAIL: rhsiun@gmail.com</string>
     <string name="ChangePwd">CHANGE PASSWORD</string>
     <string name="signout">Sign Out</string>
     <string name="inputEmail">Email Address</string>
@@ -31,7 +31,7 @@
     <string name="signupsubmit">Sign Up</string>
     <string name="loginsubmit">Log In</string>
     <string name="logout">LOGOUT</string>
-    <string name="showUsername">Name: username</string>
+    <string name="showUsername">Name: Russell</string>
     <string name="showLogin">LOGIN</string>
     <string name="showSignup">SIGN UP</string>
     <string name="cancel">CANCEL</string>
