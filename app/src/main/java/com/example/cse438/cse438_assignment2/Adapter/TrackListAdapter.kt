@@ -5,15 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.R
-import com.example.cse438.cse438_assignment2.ShowTrackActivity
+import com.example.cse438.cse438_assignment2.ShowMovieActivity
 import com.squareup.picasso.Picasso
-import retrofit2.http.Url
-import java.net.URL
-import java.nio.charset.Charset
 
 class TrackViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.track_layout, parent, false)) {
@@ -39,7 +35,7 @@ class TrackViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         url = track.link
         Picasso.get().load(track.album.cover_medium).into(trackImgView)
         itemView.setOnClickListener {
-            val intent = Intent(context, ShowTrackActivity::class.java)
+            val intent = Intent(context, ShowMovieActivity::class.java)
             intent.putExtra("trackid", trackid)
             intent.putExtra("url", url)
             intent.putExtra("title", track.title)

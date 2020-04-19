@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.Data.TrendingResult
 import com.example.cse438.cse438_assignment2.R
-import com.example.cse438.cse438_assignment2.ShowTrackActivity
+import com.example.cse438.cse438_assignment2.ShowMovieActivity
 import com.squareup.picasso.Picasso
 
 class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
@@ -17,6 +16,11 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     private var trendNameView: TextView
     private var trendid: Int
     private var url: String
+    private var releaseDate: String
+    private var title: String
+    private var overview: String
+    private var movieUrl: String
+
 
 
 
@@ -27,30 +31,38 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         trendImgView = itemView.findViewById(R.id.trendImg)
         trendid = 0
         url = ""
+        releaseDate=""
+        title=""
+        overview=""
+        movieUrl = ""
     }
 
     fun bind(trendingResult: TrendingResult) {
         val context = itemView.getContext();
         trendNameView?.text = trendingResult.title
         trendid = trendingResult.id
+        releaseDate=trendingResult.release_date
+        title=trendingResult.title
+        overview=trendingResult.overview
         url = "https://image.tmdb.org/t/p/w500" + trendingResult.poster_path
+        movieUrl = trendingResult.backdrop_path;
         Picasso.get().load(url).into(trendImgView)
-//        itemView.setOnClickListener {
-//            val intent = Intent(context, ShowTrackActivity::class.java)
-//            intent.putExtra("trackid", trackid)
-//            intent.putExtra("url", url)
-//            intent.putExtra("title", track.title)
-//            intent.putExtra("rank", track.rank)
-//            intent.putExtra("album", track.album.title)
+        itemView.setOnClickListener {
+            val intent = Intent(context, ShowMovieActivity::class.java)
+            intent.putExtra("trendid", trendid)
+            intent.putExtra("url", "https://image.tmdb.org/t/p/w500" + trendingResult.poster_path)
+            intent.putExtra("title", title)
+            intent.putExtra("overview", overview)
+            intent.putExtra("releaseDate", releaseDate)
 //            intent.putExtra("duration", track.duration)
 //            intent.putExtra("artist", track.artist.name)
 //            intent.putExtra("image", track.album.cover_medium)
 //            intent.putExtra("position", track.position)
 //            intent.putExtra("artistImage", track.artist.picture_medium)
-//            itemView.getContext().startActivity(intent)
-//
-//
-//        }
+            itemView.getContext().startActivity(intent)
+
+
+        }
     }
 
 }

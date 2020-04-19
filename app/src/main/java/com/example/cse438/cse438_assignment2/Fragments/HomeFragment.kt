@@ -72,6 +72,13 @@ class HomeFragment : Fragment() {
 //
 //        }
 
+        search_button.setOnClickListener {
+            val input: String = search_box.text.toString()
+            trendViewModel.getMovieBySearch(input)
+
+        }
+
+
 
     }
 

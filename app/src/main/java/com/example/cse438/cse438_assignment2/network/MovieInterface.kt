@@ -19,6 +19,13 @@ interface MovieInterface {
     suspend fun getTrending()
             : Response<Trending>
 
+    @GET("search/movie?api_key=8f589d13ad818bf33b851bb51b1184d6")
+    suspend fun getMovieBySearch(@Query("query") q: String)
+            : Response<Trending>;
+
+
     @GET("chart")
     suspend fun getChart(): Response<Chart>;
+
+
 }
