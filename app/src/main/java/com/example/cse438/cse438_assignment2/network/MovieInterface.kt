@@ -27,5 +27,7 @@ interface MovieInterface {
     @GET("chart")
     suspend fun getChart(): Response<Chart>;
 
-
+    @GET("trending/movie/")
+    suspend fun getVideoResult()
+            : Response<Trending>
 }

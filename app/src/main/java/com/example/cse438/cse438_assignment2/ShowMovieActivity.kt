@@ -83,7 +83,23 @@ class ShowMovieActivity : AppCompatActivity() {
         movie_preview.getPlayerUiController().showFullscreenButton(true)
         movie_preview.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
-                val videoId = "jCFWEzIVILc"
+                var videoId = "jCFWEzIVILc"
+                if(trendid == 38700){
+                    videoId = "jKCj3XuPG8M"
+                } else if (trendid == 181812) {
+                    videoId = "adzYW5DZoWs"
+                } else if (trendid == 443791) {
+                    videoId ="jCFWEzIVILc"
+                } else if (trendid == 454626) {
+                    videoId = "szby7ZHLnkA"
+                } else if (trendid == 495764) {
+                    videoId ="ptLZlrE8MrQ"
+                } else if (trendid == 446893) {
+                    videoId = "SyTg7RIn-X8"
+                } else if (trendid == 338762) {
+                    videoId = "F95Fk255I4M"
+                }
+
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
