@@ -58,7 +58,7 @@ class ShowPlaylistTracksActivity : AppCompatActivity() {
         trackListViewModel!!.gettracksinplaylist(playlistid).observe(this, Observer { returnTrack ->
             returnTracks.clear()
             returnTracks.addAll(returnTrack)
-            Toast.makeText(this, "There are " + returnTracks.size.toString() + " songs in this playlist.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "There are " + returnTracks.size.toString() + " movies in this watchlist.", Toast.LENGTH_SHORT).show()
             adapter.notifyDataSetChanged()
         })
 

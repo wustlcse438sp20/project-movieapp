@@ -10,7 +10,7 @@ import androidx.room.Query
 @Dao
 interface PlayListDao {
 
-    @Query("SELECT * from playlist_table")
+    @Query("SELECT * from watchlist_table")
     fun getplaylists(): LiveData<List<PlayList>>
 
     @Insert

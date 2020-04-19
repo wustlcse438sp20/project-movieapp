@@ -3,21 +3,21 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_to_playlist">ADD TO PLAYLIST</string>
+    <string name="add_to_playlist">ADD TO WATCHLIST</string>
     <string name="back">BACK</string>
-    <string name="title_activity_show_playlist_tracks">ShowPlaylistTracks</string>
+    <string name="title_activity_show_playlist_tracks">ShowWatchlistTracks</string>
     <string name="title_activity_show_artist">ShowArtistActivity</string>
     <string name="rating">rating</string>
-    <string name="PlayList">PlayList</string>
+    <string name="PlayList">WATCHLIST</string>
     <string name="released_date">Released: 2019-04/16</string>
     <string name="showartpic">Show Artist Picture</string>
 
-    <string name="name">Playlist Name</string>
-    <string name="disc">Playlist Description</string>
-    <string name="plgenre">Playlist Genre</string>
-    <string name="genre">Playlist Rating (Positive Integer)</string>
+    <string name="name">Watchlist Name</string>
+    <string name="disc">Watchlist Description</string>
+    <string name="plgenre">Watchlist Genre</string>
+    <string name="genre">Watchlist Rating (Positive Integer)</string>
     <string name="Submit">Submit</string>
-    <string name="hint">Input the Playlist Name to add to</string>
+    <string name="hint">Input the Watchlist Name to add to</string>
     <string name="search">Go</string>
     <string name="position">0</string>
     <string name="Add">Add</string>
