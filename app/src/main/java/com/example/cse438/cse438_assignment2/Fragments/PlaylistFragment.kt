@@ -80,7 +80,7 @@ class PlaylistFragment : Fragment() {
         val dialogView = LayoutInflater.from(this.activity).inflate(R.layout.add_new_playlist, null)
         val mBuilder = AlertDialog.Builder(this.activity)
             .setView(dialogView)
-            .setTitle("Add New Playlist")
+            .setTitle("Add New Watchlist")
         val mAlertDialog = mBuilder.show()
 
         mAlertDialog.submitaddplaylist.setOnClickListener {
@@ -91,11 +91,11 @@ class PlaylistFragment : Fragment() {
             rating = dialogView.inputplaylistrating.text.toString().toInt()
 
             if(name == "" || description == "" || genre == "" || rating == 0 ){
-                Toast.makeText(this.context, "Playlist created Unsucessful! Please enter valid value for all fields.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, "Watchlist created Unsucessful! Please enter valid value for all fields.", Toast.LENGTH_SHORT).show()
             } else {
                 mAlertDialog.dismiss()
                 playListViewModel!!.insert(PlayList(name, description, rating, genre))
-                Toast.makeText(this.context, "Playlist created!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, "Watchlist created!", Toast.LENGTH_SHORT).show()
             }
         }
     }

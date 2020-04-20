@@ -45,7 +45,7 @@ class ShowArtistActivity : AppCompatActivity() {
     }
 
     fun backToHome(view: View) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainpageActivity::class.java)
         startActivity(intent)
     }
 

@@ -115,7 +115,7 @@ class ShowMovieActivity : AppCompatActivity() {
     }
 
     fun back(view: View) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainpageActivity::class.java)
         startActivity(intent)
     }
 
@@ -127,7 +127,7 @@ class ShowMovieActivity : AppCompatActivity() {
 //            intent.putExtra("duration", duration)
             startActivity(intent)
         } else {
-            Toast.makeText(this, "Please create playlist first!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please create watchlist first!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
