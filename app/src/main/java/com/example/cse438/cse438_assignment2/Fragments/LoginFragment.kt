@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.cse438.cse438_assignment2.MainpageActivity
+import com.example.cse438.cse438_assignment2.PasswordActivity
 import com.example.cse438.cse438_assignment2.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -78,6 +79,10 @@ class LoginFragment : Fragment() {
                 })
             }
         }//end of login button listener
+
+        submitchangepassword.setOnClickListener {
+            startActivity(Intent(activity, PasswordActivity::class.java))
+        }
     }
 
 
