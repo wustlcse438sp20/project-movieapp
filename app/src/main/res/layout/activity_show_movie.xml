@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text=""
+        android:text="overview"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/movieDetailOverview"
         app:layout_constraintHorizontal_bias="0.508"
@@ -66,43 +66,20 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/movieDetailLength"
+        app:layout_constraintBottom_toTopOf="@+id/movie_preview"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movieDetailReleaseDate" />
 
-    <TextView
-        android:id="@+id/movieDetailLength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text=""
-        android:textSize="15sp"
-
-        app:layout_constraintBottom_toTopOf="@+id/movieDetailRank"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieDetailOverview" />
 
 
-    <TextView
-        android:id="@+id/movieDetailRank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text=""
-        android:textSize="15sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/movie_preview"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieDetailLength" />
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/movie_preview"
         android:layout_width="160dp"
         android:layout_height="90dp"
-        app:layout_constraintTop_toBottomOf="@+id/movieDetailRank"
+        app:layout_constraintTop_toBottomOf="@+id/movieDetailOverview"
         app:layout_constraintBottom_toTopOf="@+id/show_artist"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
