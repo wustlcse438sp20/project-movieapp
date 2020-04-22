@@ -52,7 +52,7 @@ class ShowMovieActivity : AppCompatActivity() {
 //    var album: String? = ""
 //    var artistImage: String?=""
     private var listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
-
+    private var playListViewModel: PlayListViewModel2? = null
     //private var moviePreview: YouTubePlayerView = movie_preview;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,6 +103,15 @@ class ShowMovieActivity : AppCompatActivity() {
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
+        playListViewModel = ViewModelProvider(this,PlayListViewModelFactory2(this!!.application,"")).get(PlayListViewModel2::class.java)
+
+        //observe the allEvents LiveData
+        playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->
+            // Update the cached copy of the words in the adapter.
+            listplayList.clear()
+            listplayList.addAll(playlists)
+        })
+
     }
 
     fun back(view: View) {
