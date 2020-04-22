@@ -15,25 +15,30 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.Adapter.PlayListAdapter2
 import com.example.cse438.cse438_assignment2.Database.PlayList
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_show_playlist.*
 import kotlinx.android.synthetic.main.add_new_playlist.view.*
 import kotlinx.android.synthetic.main.fragment_playlist.*
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 
 
 class ChoosePlaylistActivity : AppCompatActivity() {
     private var  listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
-<<<<<<< HEAD
+
     private var playListViewModel : PlayListViewModel2? = null
 //    private var trackname : String = ""
 //    private var artist : String = ""
 //    private var duration: Int = 0
     private var moviename : String = ""
-=======
-    private var playListViewModel : PlayListViewModel? = null
-    private var trackname : String = ""
-    private var artist : String = ""
-    private var duration: Int = 0
->>>>>>> 36c2578ffe0a312140bc528276abf6001a7ede53
+
+    lateinit var name: String
+    lateinit var db: FirebaseFirestore
+    val documentReference by lazy {
+        val db = FirebaseFirestore.getInstance()
+        return@lazy db.document("players/${FirebaseAuth.getInstance()?.currentUser?.uid}")
+    }
+    lateinit var email:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +50,7 @@ class ChoosePlaylistActivity : AppCompatActivity() {
         moviename = intent!!.getString("moviename","")
     }
 
+
     override fun onStart() {
         super.onStart()
 
@@ -54,16 +60,29 @@ class ChoosePlaylistActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        //set view model
-        playListViewModel = ViewModelProvider(this).get(PlayListViewModel::class.java)
 
-        //observe the allEvents LiveData
-        playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->
-            // Update the cached copy of the words in the adapter.
-            listplayList.clear()
-            listplayList.addAll(playlists)
-            adapter.notifyDataSetChanged()
-        })
+        db = FirebaseFirestore.getInstance()
+        val settings = FirebaseFirestoreSettings.Builder()
+            .setTimestampsInSnapshotsEnabled(true)
+            .build()
+        db.setFirestoreSettings(settings)
+        documentReference.get().addOnSuccessListener {
+
+            name=it.get("username", String::class.java)!!
+            email=it.get("email", String::class.java)!!
+
+            //set view model
+            playListViewModel = ViewModelProvider(this,PlayListViewModelFactory2(this!!.application,email)).get(PlayListViewModel2::class.java)
+
+            //observe the allEvents LiveData
+            playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->
+                // Update the cached copy of the words in the adapter.
+                listplayList.clear()
+                listplayList.addAll(playlists)
+                adapter.notifyDataSetChanged()
+            })
+        }
+
     }
 
 }

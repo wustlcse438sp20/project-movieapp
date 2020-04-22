@@ -27,7 +27,7 @@ public abstract class PlayListRoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     PlayListRoomDatabase::class.java,
-                    "watchlist_data"
+                    "watchlist_data1"
                 ).build()
                 INSTANCE = instance
                 return instance
