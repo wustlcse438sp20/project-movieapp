@@ -20,14 +20,25 @@ import com.example.cse438.cse438_assignment2.Database.PlayList
 import com.example.cse438.cse438_assignment2.PlayListViewModel
 
 import com.example.cse438.cse438_assignment2.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 import kotlinx.android.synthetic.main.add_new_playlist.*
 import kotlinx.android.synthetic.main.add_new_playlist.view.*
 import kotlinx.android.synthetic.main.fragment_playlist.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 
 
 class ProfileFragment : Fragment() {
-
+    lateinit var name: String
+    lateinit var db: FirebaseFirestore
+        val documentReference by lazy {
+        val db = FirebaseFirestore.getInstance()
+        return@lazy db.document("players/${FirebaseAuth.getInstance()?.currentUser?.uid}")
+    }
+    lateinit var email :String
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
     }
@@ -47,6 +58,22 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        db = FirebaseFirestore.getInstance()
+        val settings = FirebaseFirestoreSettings.Builder()
+            .setTimestampsInSnapshotsEnabled(true)
+            .build()
+        db.setFirestoreSettings(settings)
+        documentReference.get().addOnSuccessListener {
+
+            name=it.get("username", String::class.java)!!
+            email=it.get("email", String::class.java)!!
+            username.text=name
+            profileEmail.text=email
+
+        }
+
+
+
 
     }
 }
