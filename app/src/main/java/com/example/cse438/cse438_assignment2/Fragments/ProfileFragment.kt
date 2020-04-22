@@ -2,6 +2,7 @@ package com.example.cse438.cse438_assignment2.Fragments
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cse438.cse438_assignment2.Adapter.PlayListAdapter
 import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.Database.PlayList
+import com.example.cse438.cse438_assignment2.MainActivity
+import com.example.cse438.cse438_assignment2.PasswordActivity
 import com.example.cse438.cse438_assignment2.PlayListViewModel
 
 import com.example.cse438.cse438_assignment2.R
@@ -69,6 +72,18 @@ class ProfileFragment : Fragment() {
             email=it.get("email", String::class.java)!!
             username.text=name
             profileEmail.text=email
+
+        }
+
+        signout.setOnClickListener{
+            var mAuth = FirebaseAuth.getInstance()
+            mAuth.signOut()
+            val intent = Intent(this.context, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        changepassword.setOnClickListener{
+            startActivity(Intent(activity, PasswordActivity::class.java))
 
         }
 
