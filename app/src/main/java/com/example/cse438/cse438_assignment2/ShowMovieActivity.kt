@@ -12,27 +12,14 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.Observer
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModelProvider
-import com.example.cse438.cse438_assignment2.Data.Chart
-import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.Database.*
-import com.example.cse438_rest_studio.TrackViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_show_movie.*
-import kotlinx.android.synthetic.main.add_new_playlist.*
-import kotlinx.android.synthetic.main.add_new_playlist.view.*
-import kotlinx.android.synthetic.main.add_track_to_playlist.*
-import kotlinx.android.synthetic.main.add_track_to_playlist.view.*
-import retrofit2.Response
-import retrofit2.http.GET
-import java.io.ByteArrayInputStream
-import java.net.HttpURLConnection
-import java.net.URL
-import java.nio.charset.Charset
-import java.util.zip.GZIPInputStream
-
 
 class ShowMovieActivity : AppCompatActivity() {
     private var trendid: Int? = 0
@@ -41,18 +28,15 @@ class ShowMovieActivity : AppCompatActivity() {
     private var title: String? = ""
     private var overview: String? = ""
 
-    //    var id: Int = 0
-//    var url: String? = ""
-//    var duration: Int = 0
-//    var rank: Int = 0
-//    var title: String? = ""
-//    var artist: String? = ""
-//    var image: String? = ""
-//    var position = 0
-//    var album: String? = ""
-//    var artistImage: String?=""
     private var listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
-    private var playListViewModel: PlayListViewModel2? = null
+    private var playListViewModel : PlayListViewModel3? = null
+    lateinit var name: String
+    lateinit var db: FirebaseFirestore
+    val documentReference by lazy {
+        val db = FirebaseFirestore.getInstance()
+        return@lazy db.document("players/${FirebaseAuth.getInstance()?.currentUser?.uid}")
+    }
+    lateinit var email:String
     //private var moviePreview: YouTubePlayerView = movie_preview;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,14 +87,26 @@ class ShowMovieActivity : AppCompatActivity() {
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
-        playListViewModel = ViewModelProvider(this).get(PlayListViewModel2::class.java)
+        db = FirebaseFirestore.getInstance()
+        val settings = FirebaseFirestoreSettings.Builder()
+            .setTimestampsInSnapshotsEnabled(true)
+            .build()
+        db.setFirestoreSettings(settings)
+        documentReference.get().addOnSuccessListener {
 
-        //observe the allEvents LiveData
-        playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->
-            // Update the cached copy of the words in the adapter.
-            listplayList.clear()
-            listplayList.addAll(playlists)
-        })
+            name=it.get("username", String::class.java)!!
+            email=it.get("email", String::class.java)!!
+
+            //set view model
+            playListViewModel = ViewModelProvider(this,PlayListViewModelFactory3(this!!.application,email)).get(PlayListViewModel3::class.java)
+
+            //observe the allEvents LiveData
+            playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->
+                // Update the cached copy of the words in the adapter.
+                listplayList.clear()
+                listplayList.addAll(playlists)
+            })
+        }
 
     }
 
@@ -123,8 +119,6 @@ class ShowMovieActivity : AppCompatActivity() {
         if (listplayList.size != 0) {
             val intent = Intent(this, ChoosePlaylistActivity::class.java)
             intent.putExtra("moviename", title)
-//            intent.putExtra("overview", overview)
-//            intent.putExtra("duration", duration)
             startActivity(intent)
         } else {
             Toast.makeText(this, "Please create watchlist first!", Toast.LENGTH_SHORT).show()

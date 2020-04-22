@@ -5,12 +5,12 @@ import androidx.lifecycle.*
 import com.example.cse438.cse438_assignment2.Database.*
 import kotlinx.coroutines.launch
 
-class PlayListViewModelFactory2(application: Application, email: String): ViewModelProvider.NewInstanceFactory(){
+class PlayListViewModelFactory3(application: Application, email: String): ViewModelProvider.NewInstanceFactory(){
     private var mApplication = application
     private var mParam =email
 
 
-    fun PlayListViewModelFactory2(
+    fun PlayListViewModelFactory3(
         application: Application,
         param: String
     ) {
@@ -19,11 +19,11 @@ class PlayListViewModelFactory2(application: Application, email: String): ViewMo
     }
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return PlayListViewModel2(mApplication,mParam) as T
+        return PlayListViewModel3(mApplication,mParam) as T
     }
 }
 
-class PlayListViewModel2(application: Application, email: String) : AndroidViewModel(application) {
+class PlayListViewModel3(application: Application, email: String) : AndroidViewModel(application) {
     // The ViewModel maintains a reference to the repository to get data.
     private val repository: PlayListRepository
     var allPlaylists: LiveData<List<PlayList>> = MutableLiveData()

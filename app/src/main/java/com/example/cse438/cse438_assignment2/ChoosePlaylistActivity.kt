@@ -27,9 +27,6 @@ class ChoosePlaylistActivity : AppCompatActivity() {
     private var  listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
 
     private var playListViewModel : PlayListViewModel2? = null
-//    private var trackname : String = ""
-//    private var artist : String = ""
-//    private var duration: Int = 0
     private var moviename : String = ""
 
     lateinit var name: String
