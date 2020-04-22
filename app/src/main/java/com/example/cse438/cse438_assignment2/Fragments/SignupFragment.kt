@@ -89,7 +89,7 @@ class SignupFragment : Fragment() {
                             .set(userData)
                             .addOnSuccessListener {
                                 Toast.makeText(this.activity, "Player Created", Toast.LENGTH_LONG).show()
-                                val intent = Intent(this.activity, MainpageActivity::class.java)
+                                val intent = Intent(this.activity, MainActivity::class.java)
                                 startActivity(intent)
                                 this.activity!!.finish()
                             }
