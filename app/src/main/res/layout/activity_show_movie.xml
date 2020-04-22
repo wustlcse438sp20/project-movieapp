@@ -72,23 +72,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movieDetailReleaseDate" />
 
-<<<<<<< HEAD
-=======
-    <TextView
-        android:id="@+id/movieDetailLength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text=""
-        android:textSize="15sp"
-
-        app:layout_constraintBottom_toTopOf="+id/movieDetailRank"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieDetailOverview" />
->>>>>>> 6df7dbec41b1465cf39bb476f6c5fe8ef4900c4f
-
-
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/movie_preview"
