@@ -71,6 +71,7 @@ class LoginFragment : Fragment() {
                     if(task.isSuccessful) {
                         Toast.makeText(this.activity, "Successfully Logged In", Toast.LENGTH_LONG).show()
                         val intent = Intent(this.activity, MainpageActivity::class.java)
+                        intent.putExtra("email",email)
                         startActivity(intent)
                         this.activity!!.finish()
                     }else {
