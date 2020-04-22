@@ -78,25 +78,10 @@
         android:layout_width="160dp"
         android:layout_height="90dp"
         app:layout_constraintTop_toBottomOf="@+id/movieDetailOverview"
-        app:layout_constraintBottom_toTopOf="@+id/show_artist"
+        app:layout_constraintBottom_toTopOf="@+id/add_playlist"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-
-    <Button
-        android:id="@+id/show_artist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:onClick="showArtist"
-        android:text="@string/showartpic"
-        app:layout_constraintBottom_toBottomOf="@+id/movie_preview"
-        app:layout_constraintBottom_toTopOf="@+id/add_playlist"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/add_playlist"
@@ -108,7 +93,7 @@
         android:layout_marginRight="8dp"
         android:onClick="addToPlayList"
         android:text="@string/add_to_playlist"
-        app:layout_constraintBottom_toBottomOf="@+id/show_artist"
+        app:layout_constraintBottom_toBottomOf="@+id/movie_preview"
         app:layout_constraintBottom_toTopOf="@+id/back_to_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

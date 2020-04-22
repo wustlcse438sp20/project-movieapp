@@ -9,9 +9,7 @@ import com.example.cse438.cse438_assignment2.Database.TrackList
 
 class AddtoPlaylistActivity : AppCompatActivity() {
 
-    private var trackname : String = ""
-    private var artist : String = ""
-    private var duration: Int = 0
+    private var moviename : String = ""
     private var playlistid: Int = 0
     private var playlistname : String = ""
     private var trackListViewModel : TrackListViewModel? = null
@@ -21,17 +19,15 @@ class AddtoPlaylistActivity : AppCompatActivity() {
 
         val intent = intent.extras
         playlistname = intent!!.getString("playlistname", "")
-        trackname = intent!!.getString("trackname", "")
-        artist = intent!!.getString("artist", "")
-        duration = intent!!.getInt("duration", 0)
+        moviename = intent!!.getString("moviename", "")
         playlistid = intent!!.getInt("playlistid", 0)
 
         trackListViewModel = ViewModelProvider(this).get(TrackListViewModel::class.java)
 
-        if(trackname == "" || playlistname == ""){
+        if(moviename == "" || playlistname == ""){
             Toast.makeText(this, "Added Unsucessful!", Toast.LENGTH_SHORT).show()
         } else {
-            trackListViewModel!!.insert(TrackList(playlistname, trackname, artist, duration, playlistid))
+            trackListViewModel!!.insert(TrackList(playlistname, moviename, playlistid))
             Toast.makeText(this, playlistid.toString() + ": Added to " + playlistname + " Successful!" , Toast.LENGTH_SHORT).show()
         }
 

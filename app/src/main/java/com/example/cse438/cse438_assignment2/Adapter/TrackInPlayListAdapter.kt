@@ -16,37 +16,23 @@ import com.squareup.picasso.Picasso
 class TrackInPlayListAdapterViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.trackinplaylist_layout, parent, false)) {
 
-    private val trackListName: TextView
-    private val trackListArtist: TextView
-    private val trackListDuration: TextView
-    private val playlistGenre: TextView
-    private val playlistRating: TextView
+    private val moviename: TextView
 
 
     init {
-        trackListName = itemView.findViewById(R.id.track_name)
-        trackListArtist = itemView.findViewById(R.id.track_artist)
-        trackListDuration = itemView.findViewById(R.id.track_time)
-        playlistGenre = itemView.findViewById(R.id.genre)
-        playlistRating = itemView.findViewById(R.id.playlistRating)
+        moviename = itemView.findViewById(R.id.movie_name)
 
     }
 
-    fun bind(track: TrackList, genre: String, rating: Int) {
+    fun bind(track: TrackList) {
         val context = itemView.getContext();
-        trackListName!!.text = track.trackname
-        trackListArtist!!.text = track.artist
-        trackListDuration!!.text = track.duration.toString()
-        playlistGenre!!.text = genre
-        playlistRating!!.text = rating.toString()
+        moviename!!.text = track.trackname
 
         itemView.setOnClickListener {
             val intent = Intent(context, DeleteTrackListActivity::class.java)
             intent.putExtra("tracklistid", track.tracklistid)
             intent.putExtra("playlistid", track.playlistid)
-            intent.putExtra("trackname", track.trackname)
-            intent.putExtra("genre", genre)
-            intent.putExtra("rating", rating)
+            intent.putExtra("moviename", track.trackname)
             intent.putExtra("playlistname", track.Playlistname)
             itemView.getContext().startActivity(intent)
         }
@@ -56,7 +42,7 @@ class TrackInPlayListAdapterViewHolder(inflater: LayoutInflater, parent: ViewGro
 }
 
 
-class TrackInPlayListAdapter(private val list: ArrayList<TrackList>?, private val genre: String, private val rating: Int) :
+class TrackInPlayListAdapter(private val list: ArrayList<TrackList>?) :
     RecyclerView.Adapter<TrackInPlayListAdapterViewHolder>() {
     private var showtrackLists: ArrayList<TrackList>? = list
 
@@ -68,7 +54,7 @@ class TrackInPlayListAdapter(private val list: ArrayList<TrackList>?, private va
 
     override fun onBindViewHolder(holder: TrackInPlayListAdapterViewHolder, position: Int) {
         val trackList: TrackList = showtrackLists!!.get(position)
-        holder.bind(trackList, genre, rating)
+        holder.bind(trackList)
     }
 
     override fun getItemCount(): Int = list!!.size

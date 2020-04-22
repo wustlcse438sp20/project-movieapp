@@ -26,7 +26,7 @@ public abstract class TrackListRoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     TrackListRoomDatabase::class.java,
-                    "tracklist_database8"
+                    "tracklist_database9"
                 ).build()
                 INSTANCE = instance
                 return instance

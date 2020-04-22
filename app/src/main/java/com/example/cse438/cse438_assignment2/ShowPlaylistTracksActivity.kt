@@ -48,7 +48,7 @@ class ShowPlaylistTracksActivity : AppCompatActivity() {
         val playlistid = bundle!!.getInt("id")!!
 
         val recyclerView = chooseplaylist_recycler_view
-        val adapter = TrackInPlayListAdapter(returnTracks, playlistGenre!!, rating!!)
+        val adapter = TrackInPlayListAdapter(returnTracks)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -66,7 +66,7 @@ class ShowPlaylistTracksActivity : AppCompatActivity() {
 
 
     fun backtohome(view: View) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainpageActivity::class.java)
         startActivity(intent)
     }
 

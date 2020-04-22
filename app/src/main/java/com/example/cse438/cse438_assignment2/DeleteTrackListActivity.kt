@@ -14,10 +14,8 @@ import kotlinx.android.synthetic.main.activity_show_playlist.*
 class DeleteTrackListActivity : AppCompatActivity() {
     private var playlistid: Int = 0
     private var tracklistid: Int = 0
-    private var trackname: String = ""
+    private var moviename: String = ""
     private var playlistname: String = ""
-    var playlistGenre: String? = ""
-    var rating: Int? = 0
     private var returnTracks: ArrayList<TrackList> = ArrayList()
 
     private var trackListViewModel : TrackListViewModel? = null
@@ -29,21 +27,20 @@ class DeleteTrackListActivity : AppCompatActivity() {
         val intent = intent.extras
         playlistid = intent!!.getInt("playlistid", 0)
         tracklistid = intent!!.getInt("tracklistid", 0)
-        trackname = intent!!.getString("trackname", "")
-        playlistGenre = intent!!.getString("genre", "")
-        rating = intent!!.getInt("rating", 0)
+        moviename = intent!!.getString("moviename", "")
+
         playlistname = intent!!.getString("playlistname", "")
 
         trackListViewModel = ViewModelProvider(this).get(TrackListViewModel::class.java)
 
         if (tracklistid != 0 && playlistid != 0) {
             trackListViewModel!!.deleteplaylist(playlistid, tracklistid)
-            Toast.makeText(this, "Delete " + trackname + " from " + playlistname + " Successful!" , Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Delete " + moviename + " from " + playlistname + " Successful!" , Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Delete unsuccessfully!", Toast.LENGTH_SHORT).show()
         }
 
-        val intent1 = Intent(this, MainActivity::class.java)
+        val intent1 = Intent(this, MainpageActivity::class.java)
         startActivity(intent1)
 
     }

@@ -10,8 +10,6 @@ import com.example.cse438.cse438_assignment2.Data.Track
 data class TrackList(
     @ColumnInfo(name = "Playlistname") val Playlistname: String,
     @ColumnInfo(name = "Trackname") val trackname: String,
-    @ColumnInfo(name = "Artist") val artist: String,
-    @ColumnInfo(name = "Duration") val duration: Int,
     @ColumnInfo(name = "playlistid") val playlistid: Int)
 {
     @PrimaryKey(autoGenerate = true)

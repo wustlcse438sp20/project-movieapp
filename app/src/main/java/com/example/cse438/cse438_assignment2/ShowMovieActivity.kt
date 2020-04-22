@@ -122,8 +122,8 @@ class ShowMovieActivity : AppCompatActivity() {
     fun addToPlayList(view: View) {
         if (listplayList.size != 0) {
             val intent = Intent(this, ChoosePlaylistActivity::class.java)
-            intent.putExtra("title", title)
-            intent.putExtra("overview", overview)
+            intent.putExtra("moviename", title)
+//            intent.putExtra("overview", overview)
 //            intent.putExtra("duration", duration)
             startActivity(intent)
         } else {
@@ -131,15 +131,6 @@ class ShowMovieActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    fun showArtist(view: View) {
-
-
-        val intent = Intent(this, ShowArtistActivity::class.java)
-//        intent.putExtra("artist", artist)
-//        intent.putExtra("artistImage", artistImage)
-        startActivity(intent)
     }
 
 

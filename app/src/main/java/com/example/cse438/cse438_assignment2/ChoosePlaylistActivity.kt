@@ -23,17 +23,19 @@ import kotlinx.android.synthetic.main.fragment_playlist.*
 class ChoosePlaylistActivity : AppCompatActivity() {
     private var  listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
     private var playListViewModel : PlayListViewModel2? = null
-    private var trackname : String = ""
-    private var artist : String = ""
-    private var duration: Int = 0
+//    private var trackname : String = ""
+//    private var artist : String = ""
+//    private var duration: Int = 0
+    private var moviename : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.playlist_to_choose)
         val intent = intent.extras
-        trackname = intent!!.getString("trackname", "")
-        artist = intent!!.getString("artist", "")
-        duration = intent!!.getInt("duration", 0)
+//        trackname = intent!!.getString("trackname", "")
+//        artist = intent!!.getString("artist", "")
+//        duration = intent!!.getInt("duration", 0)
+        moviename = intent!!.getString("moviename","")
     }
 
     override fun onStart() {
@@ -41,7 +43,7 @@ class ChoosePlaylistActivity : AppCompatActivity() {
 
         //set recycler view
         val recyclerView = chooseplaylist_recycler_view
-        val adapter = PlayListAdapter2(listplayList, trackname, artist, duration)
+        val adapter = PlayListAdapter2(listplayList, moviename)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
