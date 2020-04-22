@@ -12,7 +12,8 @@ data class PlayList(
                     @ColumnInfo(name = "name") val name: String,
                     @ColumnInfo(name = "description") val description: String,
                     @ColumnInfo(name="rating") val rating: Int,
-                    @ColumnInfo(name="genre") val genre: String)
+                    @ColumnInfo(name="genre") val genre: String,
+                    @ColumnInfo(name="email") val email: String)
 {
     @PrimaryKey(autoGenerate = true)
     var playlistid: Int = 0

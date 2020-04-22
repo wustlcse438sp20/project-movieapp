@@ -12,10 +12,10 @@ class PlayListViewModel2(application: Application) : AndroidViewModel(applicatio
     // The ViewModel maintains a reference to the repository to get data.
     private val repository: PlayListRepository
     var allPlaylists: LiveData<List<PlayList>> = MutableLiveData()
-
+    var email=""
     init {
         val playlistsDao = PlayListRoomDatabase.getDatabase(application).playlistDao()
-        repository = PlayListRepository(playlistsDao)
+        repository = PlayListRepository(playlistsDao,email)
         allPlaylists = repository.allPlaylists
     }
 

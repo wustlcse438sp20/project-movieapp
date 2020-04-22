@@ -22,11 +22,18 @@ import kotlinx.android.synthetic.main.fragment_playlist.*
 
 class ChoosePlaylistActivity : AppCompatActivity() {
     private var  listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
+<<<<<<< HEAD
     private var playListViewModel : PlayListViewModel2? = null
 //    private var trackname : String = ""
 //    private var artist : String = ""
 //    private var duration: Int = 0
     private var moviename : String = ""
+=======
+    private var playListViewModel : PlayListViewModel? = null
+    private var trackname : String = ""
+    private var artist : String = ""
+    private var duration: Int = 0
+>>>>>>> 36c2578ffe0a312140bc528276abf6001a7ede53
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +55,7 @@ class ChoosePlaylistActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         //set view model
-        playListViewModel = ViewModelProvider(this).get(PlayListViewModel2::class.java)
+        playListViewModel = ViewModelProvider(this).get(PlayListViewModel::class.java)
 
         //observe the allEvents LiveData
         playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->

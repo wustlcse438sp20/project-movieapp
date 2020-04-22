@@ -5,9 +5,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PlayListRepository(private val playListDao: PlayListDao) {
+class PlayListRepository(private val playListDao: PlayListDao, private val email: String) {
 
-    val allPlaylists: LiveData<List<PlayList>> = playListDao.getplaylists()
+    val allPlaylists: LiveData<List<PlayList>> = playListDao.getplaylists(email)
 
 
     fun insert(playList: PlayList) {
