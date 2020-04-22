@@ -103,7 +103,7 @@ class ShowMovieActivity : AppCompatActivity() {
                 youTubePlayer.cueVideo(videoId, 0f)
             }
         })
-        playListViewModel = ViewModelProvider(this,PlayListViewModelFactory2(this!!.application,"")).get(PlayListViewModel2::class.java)
+        playListViewModel = ViewModelProvider(this).get(PlayListViewModel2::class.java)
 
         //observe the allEvents LiveData
         playListViewModel!!.allPlaylists.observe(this, Observer { playlists ->
