@@ -25,6 +25,10 @@ class TrackListRepository(private val trackListDao: TrackListDao) {
             trackListDao.deleteplaylist(playlistID, tracklistID)
         }
     }
+    fun getComment(trackname: String):LiveData<List<String>> {
+        return trackListDao.getComments(trackname)
+    }
+
 
 
 }

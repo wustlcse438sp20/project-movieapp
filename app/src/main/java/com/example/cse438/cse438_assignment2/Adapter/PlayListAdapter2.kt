@@ -4,12 +4,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.*
 import com.example.cse438.cse438_assignment2.Database.PlayList
-import com.example.cse438.cse438_assignment2.Database.TrackList
+import com.example.cse438.cse438_assignment2.AddtoPlaylistActivity
 
 class PlayListViewHolder2(inflater: LayoutInflater, parent: ViewGroup, moviename: String) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.playlist_layout2, parent, false)) {

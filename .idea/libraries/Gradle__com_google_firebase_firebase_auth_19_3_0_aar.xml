@@ -1,11 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-auth:19.3.0@aar">
     <CLASSES>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d14ac0ee1521d7e2387b7e80a5100e72/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d14ac0ee1521d7e2387b7e80a5100e72/res" />
+=======
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/1fd19b54a89403395270befd6f83d043/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/1fd19b54a89403395270befd6f83d043/res" />
+>>>>>>> refs/remotes/origin/master
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-auth/19.3.0/e25629f634f36f2e16380174cab6129bab8b4b5b/firebase-auth-19.3.0-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-auth/19.3.0/e25629f634f36f2e16380174cab6129bab8b4b5b/firebase-auth-19.3.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES />
   </library>

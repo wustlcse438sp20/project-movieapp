@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
-@Database(entities = arrayOf(PlayList::class), version = 2)
+@Database(entities = arrayOf(PlayList::class), version = 2, exportSchema = false)
 
 public abstract class PlayListRoomDatabase : RoomDatabase() {
 

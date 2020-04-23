@@ -12,14 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateplaylistActivity"></activity>
+        <activity android:name=".SeeCommentActivity"></activity>
+        <activity android:name=".AddtoPlaylistActivity" />
+        <activity android:name=".UpdateplaylistActivity" />
         <activity android:name=".PasswordActivity" />
         <activity android:name=".MainpageActivity" />
         <activity
             android:name=".ShowArtistActivity"
             android:label="@string/title_activity_show_artist"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddtoPlaylistActivity" />
         <activity android:name=".ChoosePlaylistActivity" />
         <activity android:name=".DeleteTrackListActivity" />
         <activity
