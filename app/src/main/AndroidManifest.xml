@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateplaylistActivity"></activity>
+        <activity android:name=".SeeCommentActivity"></activity>
+        <activity android:name=".AddtoPlaylistActivity" />
+        <activity android:name=".UpdateplaylistActivity" />
         <activity android:name=".PasswordActivity" />
         <activity android:name=".MainpageActivity" />
         <activity

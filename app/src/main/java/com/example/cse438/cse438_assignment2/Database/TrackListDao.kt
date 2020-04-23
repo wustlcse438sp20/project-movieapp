@@ -20,4 +20,11 @@ interface TrackListDao {
 
     @Query("Delete FROM track_table WHERE track_table.playlistid =:playlistID and track_table.tracklistid =:tracklistID")
     fun deleteplaylist(playlistID: Int, tracklistID: Int)
+
+    @Query("SELECT comment FROM track_table WHERE track_table.Trackname =:trackname")
+    fun getComments(trackname: String): LiveData<List<String>>
+
+
+
+
 }

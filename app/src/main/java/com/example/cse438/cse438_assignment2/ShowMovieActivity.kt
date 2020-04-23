@@ -239,6 +239,12 @@ class ShowMovieActivity : AppCompatActivity() {
         return super.onTouchEvent(event)
     }
 
+
+    fun getComment(view:View){
+        val intent = Intent(this, SeeCommentActivity::class.java)
+        intent.putExtra("moviename", title)
+        startActivity(intent)
+    }
 //    private inner class MyDragListener : View.OnDragListener {
 //
 //        private lateinit var img: View
