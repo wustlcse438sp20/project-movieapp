@@ -3,14 +3,12 @@ package com.example.cse438.cse438_assignment2
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.ClipData
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.DragEvent
-import android.view.GestureDetector
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
@@ -25,11 +23,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_show_movie.*
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.widget.LinearLayout
-
 
 class ShowMovieActivity : AppCompatActivity() {
     private var trendid: Int? = 0
@@ -37,8 +30,6 @@ class ShowMovieActivity : AppCompatActivity() {
     private var releaseDate: String? = ""
     private var title: String? = ""
     private var overview: String? = ""
-//    private var height: Int = 0
-//    private var width: Int = 0
 
     private var listplayList: ArrayList<PlayList> = ArrayList<PlayList>()
     private var playListViewModel : PlayListViewModel3? = null
@@ -60,6 +51,8 @@ class ShowMovieActivity : AppCompatActivity() {
         setContentView(R.layout.activity_show_movie)
         posterView = movieDetailImg
         mDetector = GestureDetectorCompat(this, MyGestureListener())
+
+        val inflater: LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         posterView.setOnLongClickListener { v: View ->
 

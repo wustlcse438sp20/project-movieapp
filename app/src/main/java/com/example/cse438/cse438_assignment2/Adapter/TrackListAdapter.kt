@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.R
 import com.example.cse438.cse438_assignment2.ShowMovieActivity
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.track_layout.view.*
+import kotlinx.android.synthetic.main.trend_layout.view.*
 
 class TrackViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.track_layout, parent, false)) {
@@ -34,7 +38,7 @@ class TrackViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         trackid = track.id
         url = track.link
         Picasso.get().load(track.album.cover_medium).into(trackImgView)
-        itemView.setOnClickListener {
+        itemView.trackImg.setOnClickListener {
             val intent = Intent(context, ShowMovieActivity::class.java)
             intent.putExtra("trackid", trackid)
             intent.putExtra("url", url)
@@ -47,8 +51,10 @@ class TrackViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             intent.putExtra("position", track.position)
             intent.putExtra("artistImage", track.artist.picture_medium)
             itemView.getContext().startActivity(intent)
+        }
 
-
+        itemView.trackImgName.setOnClickListener {
+            Toast.makeText(itemView.trackImgName.context, "Please click the image to see the details of the poster", Toast.LENGTH_LONG).show()
         }
     }
 

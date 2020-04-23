@@ -28,17 +28,5 @@
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/trackImg" />
 
-        <TextView
-            android:id="@+id/trackid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text=""
-            android:textStyle="bold"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/trackImg"
-
-            />
-
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
