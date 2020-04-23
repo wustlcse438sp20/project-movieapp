@@ -27,6 +27,7 @@
             android:label="@string/title_activity_show_playlist_tracks"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ShowMovieActivity" />
+        <activity android:name=".AddProfilePicActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -25,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class SignupFragment : Fragment() {
     //Default values
-    private var defaultWins:Int = 0;
+    private var defaultWins:Int = R.drawable.profile02;
     private var defaultLosses:Int = 0;
     private var defaultChips:Int = 100;
     //A firebase authentication
@@ -103,7 +103,5 @@ class SignupFragment : Fragment() {
             }
         }//click listener
     }
-
-
 }
 
