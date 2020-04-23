@@ -54,6 +54,6 @@ class AddProfilePicActivity : AppCompatActivity() {
         documentReference.update("wins",resourceId)
 
         Toast.makeText(this, "Profile Picture Changed", Toast.LENGTH_LONG).show()
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, MainpageActivity::class.java))
     }
 }
