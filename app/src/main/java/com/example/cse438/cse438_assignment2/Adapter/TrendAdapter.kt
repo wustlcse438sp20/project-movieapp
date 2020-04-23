@@ -1,6 +1,9 @@
 package com.example.cse438.cse438_assignment2.Adapter
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa5d3f8cb7f3e3be2e50ee65b103da45e2e27cea
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
@@ -20,8 +23,6 @@ import com.example.cse438.cse438_assignment2.Data.TrendingResult
 import com.example.cse438.cse438_assignment2.R
 import com.example.cse438.cse438_assignment2.ShowMovieActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.add_new_playlist.*
-import kotlinx.android.synthetic.main.overview_layout.view.*
 import kotlinx.android.synthetic.main.trend_layout.view.*
 import kotlinx.android.synthetic.main.popup_window.view.*
 
@@ -73,7 +74,10 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         }
 
         itemView.trendImgName.setOnClickListener {
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa5d3f8cb7f3e3be2e50ee65b103da45e2e27cea
             val view = LayoutInflater.from(itemView.context).inflate(R.layout.popup_window, null)
             val popupWindow = PopupWindow(
                 view, // Custom view to show in popup window
@@ -82,7 +86,7 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             )
             // Finally, show the popup window on app
             TransitionManager.beginDelayedTransition(myParent)
-            view.popup_overview.text = "Overview: " +overview;
+            view.popup_overview.text = "Overview: " + overview;
             view.popup_back.setOnClickListener(){
                 popupWindow.dismiss()
             }
@@ -96,15 +100,6 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
                 0 // Y offset
             )
         }
-    }
-
-    fun dialogWindow() {
-        val dialogView = LayoutInflater.from(itemView.context).inflate(R.layout.overview_layout, null)
-        val mBuilder = AlertDialog.Builder(itemView.context)
-            .setView(dialogView)
-            .setTitle("OVERVIEW")
-        dialogView.overview_content
-        mBuilder.show()
     }
 
 }

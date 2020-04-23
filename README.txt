@@ -15,6 +15,7 @@ No. Everything works well.
 1. Home Page
 Click on Movie Poster - Enter Show Movie Details
 Click on Movie Name - Pop up window show movie overviews
+Seach - Search the movies by name
 
 2. Watchlist page
 Click on the edit button - Edit Watchlist
