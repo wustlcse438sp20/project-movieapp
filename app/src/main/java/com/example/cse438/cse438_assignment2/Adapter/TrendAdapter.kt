@@ -10,6 +10,7 @@ import com.example.cse438.cse438_assignment2.Data.TrendingResult
 import com.example.cse438.cse438_assignment2.R
 import com.example.cse438.cse438_assignment2.ShowMovieActivity
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.trend_layout.view.*
 
 class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.trend_layout, parent, false)) {
@@ -47,21 +48,18 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         url = "https://image.tmdb.org/t/p/w500" + trendingResult.poster_path
         movieUrl = trendingResult.backdrop_path;
         Picasso.get().load(url).into(trendImgView)
-        itemView.setOnClickListener {
+        itemView.trendImg.setOnClickListener {
             val intent = Intent(context, ShowMovieActivity::class.java)
             intent.putExtra("trendid", trendid)
             intent.putExtra("url", "https://image.tmdb.org/t/p/w500" + trendingResult.poster_path)
             intent.putExtra("title", title)
             intent.putExtra("overview", overview)
             intent.putExtra("releaseDate", releaseDate)
-//            intent.putExtra("duration", track.duration)
-//            intent.putExtra("artist", track.artist.name)
-//            intent.putExtra("image", track.album.cover_medium)
-//            intent.putExtra("position", track.position)
-//            intent.putExtra("artistImage", track.artist.picture_medium)
             itemView.getContext().startActivity(intent)
+        }
 
-
+        itemView.trendImgName.setOnClickListener {
+            //Todo: Pop Up Window
         }
     }
 
