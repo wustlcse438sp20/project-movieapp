@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/image_profile1"
+        android:layout_width="194dp"
+        android:layout_height="149dp"
+        android:contentDescription="Profile Pic"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile01"
+        android:tag = "profile01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile2"
+        android:layout_width="0dp"
+        android:layout_height="151dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile02"
+        android:tag = "profile02"
+        app:layout_constraintLeft_toRightOf="@+id/image_profile1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile3"
+        android:layout_width="170dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="152dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile03"
+        android:tag = "profile03"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile4"
+        android:layout_width="188dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="156dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile04"
+        android:tag = "profile04"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile5"
+        android:layout_width="150dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="476dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile05"
+        android:tag = "profile05"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile6"
+        android:layout_width="178dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="484dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile06"
+        android:tag = "profile06"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile7"
+        android:layout_width="175dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="312dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile07"
+        android:tag = "profile07"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile8"
+        android:layout_width="178dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="312dp"
+        android:contentDescription="First"
+        android:onClick="addProfilePic"
+        android:src="@drawable/profile08"
+        android:tag = "profile08"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

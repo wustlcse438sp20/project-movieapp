@@ -11,25 +11,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cse438.cse438_assignment2.*
 import com.example.cse438.cse438_assignment2.Adapter.PlayListAdapter
 import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.Database.PlayList
-import com.example.cse438.cse438_assignment2.MainActivity
-import com.example.cse438.cse438_assignment2.PasswordActivity
-import com.example.cse438.cse438_assignment2.PlayListViewModel
 
-import com.example.cse438.cse438_assignment2.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.add_new_playlist.*
 import kotlinx.android.synthetic.main.add_new_playlist.view.*
 import kotlinx.android.synthetic.main.fragment_playlist.*
 import kotlinx.android.synthetic.main.fragment_profile.*
+import java.io.File
 
 
 class ProfileFragment : Fragment() {
@@ -40,6 +40,7 @@ class ProfileFragment : Fragment() {
         return@lazy db.document("players/${FirebaseAuth.getInstance()?.currentUser?.uid}")
     }
     lateinit var email :String
+    var imgsrc:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -70,9 +71,11 @@ class ProfileFragment : Fragment() {
 
             name=it.get("username", String::class.java)!!
             email=it.get("email", String::class.java)!!
+            imgsrc=it.get("wins",Int::class.java)!!
             username.text=name
             profileEmail.text=email
 
+            profileImg.setImageResource(imgsrc);
         }
 
         signout.setOnClickListener{
@@ -87,6 +90,9 @@ class ProfileFragment : Fragment() {
 
         }
 
+        changeprofilepic.setOnClickListener({
+            startActivity(Intent(activity, AddProfilePicActivity::class.java))
+        })
 
 
 
