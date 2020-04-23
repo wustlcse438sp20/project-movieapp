@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.Database.PlayList
 import com.example.cse438.cse438_assignment2.R
 import com.example.cse438.cse438_assignment2.ShowPlaylistTracksActivity
+import com.example.cse438.cse438_assignment2.UpdateplaylistActivity
+import kotlinx.android.synthetic.main.playlist_layout.view.*
 
 
 //create the view holder
@@ -34,12 +36,50 @@ class PlayListViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         playListDescription!!.text = playList.description
         playListGenre!!.text = playList.genre
         playListRating!!.text = playList.rating.toString()
-        itemView.setOnClickListener {
+
+        itemView.playList_name.setOnClickListener {
             val intent1 = Intent(context, ShowPlaylistTracksActivity::class.java)
             intent1.putExtra("name", playList.name)
             intent1.putExtra("genre", playList.genre)
             intent1.putExtra("rating", playList.rating)
             intent1.putExtra("id", playlistId)
+            itemView.getContext().startActivity(intent1)
+        }
+
+        itemView.playList_description.setOnClickListener {
+            val intent1 = Intent(context, ShowPlaylistTracksActivity::class.java)
+            intent1.putExtra("name", playList.name)
+            intent1.putExtra("genre", playList.genre)
+            intent1.putExtra("rating", playList.rating)
+            intent1.putExtra("id", playlistId)
+            itemView.getContext().startActivity(intent1)
+        }
+
+        itemView.playlist_genre.setOnClickListener {
+            val intent1 = Intent(context, ShowPlaylistTracksActivity::class.java)
+            intent1.putExtra("name", playList.name)
+            intent1.putExtra("genre", playList.genre)
+            intent1.putExtra("rating", playList.rating)
+            intent1.putExtra("id", playlistId)
+            itemView.getContext().startActivity(intent1)
+        }
+
+        itemView.playList_rating.setOnClickListener {
+            val intent1 = Intent(context, ShowPlaylistTracksActivity::class.java)
+            intent1.putExtra("name", playList.name)
+            intent1.putExtra("genre", playList.genre)
+            intent1.putExtra("rating", playList.rating)
+            intent1.putExtra("id", playlistId)
+            itemView.getContext().startActivity(intent1)
+        }
+
+        itemView.editImg.setOnClickListener {
+            val intent1 = Intent(context, UpdateplaylistActivity::class.java)
+            intent1.putExtra("name", playList.name)
+            intent1.putExtra("genre", playList.genre)
+            intent1.putExtra("rating", playList.rating)
+            intent1.putExtra("id", playlistId)
+            intent1.putExtra("description", playList.description)
             itemView.getContext().startActivity(intent1)
         }
     }

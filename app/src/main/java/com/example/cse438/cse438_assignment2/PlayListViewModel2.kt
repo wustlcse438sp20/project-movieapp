@@ -44,4 +44,8 @@ class PlayListViewModel2(application: Application, email: String) : AndroidViewM
         repository.insert(playList)
     }
 
+    fun update(name:String, description:String, genre:String, rating:Int, id:Int) = viewModelScope.launch{
+        repository.update(name, description, genre, rating, id)
+    }
+
 }

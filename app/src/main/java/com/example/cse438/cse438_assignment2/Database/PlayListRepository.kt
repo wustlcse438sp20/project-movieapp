@@ -16,6 +16,12 @@ class PlayListRepository(private val playListDao: PlayListDao, private val email
         }
     }
 
+    fun update(name:String, description:String, genre:String, rating:Int, id:Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            playListDao.update(name, description, genre, rating, id)
+        }
+    }
+
 
 
 
