@@ -1,16 +1,12 @@
 package com.example.cse438.cse438_assignment2
 
-import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import android.widget.VideoView
 import androidx.annotation.NonNull
 import androidx.lifecycle.Observer
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModelProvider
 import com.example.cse438.cse438_assignment2.Database.*
 import com.google.firebase.auth.FirebaseAuth
@@ -60,10 +56,7 @@ class ShowMovieActivity : AppCompatActivity() {
         movieDetailName.text = "Title: " + title
         movieDetailReleaseDate.text = "Release Date: " + releaseDate
         movieDetailOverview.text = "Overview: " + overview
-//        trackDetailPosition.text = "Position: " + position.toString()
-//        trackDetailTrackName.text = "Album: " + album
 
-        //play video
         movie_preview.getPlayerUiController().showFullscreenButton(true)
         movie_preview.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
