@@ -3,14 +3,12 @@ package com.example.cse438.cse438_assignment2
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.ClipData
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.DragEvent
-import android.view.GestureDetector
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
@@ -53,6 +51,8 @@ class ShowMovieActivity : AppCompatActivity() {
         setContentView(R.layout.activity_show_movie)
         posterView = movieDetailImg
         mDetector = GestureDetectorCompat(this, MyGestureListener())
+
+        val inflater: LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         posterView.setOnLongClickListener { v: View ->
 
