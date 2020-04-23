@@ -21,7 +21,6 @@
             android:name=".ShowArtistActivity"
             android:label="@string/title_activity_show_artist"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddtoPlaylistActivity" />
         <activity android:name=".ChoosePlaylistActivity" />
         <activity android:name=".DeleteTrackListActivity" />
         <activity

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="cse438-assignment3/app" />
-      <module fileurl="file://$PROJECT_DIR$/cse438-assignment3.iml" filepath="$PROJECT_DIR$/cse438-assignment3.iml" group="cse438-assignment3" />
-      <module fileurl="file://$PROJECT_DIR$/app/project-movieapp-app.iml" filepath="$PROJECT_DIR$/app/project-movieapp-app.iml" />
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/app/yushi-project-movieapp-app.iml" filepath="$PROJECT_DIR$/app/yushi-project-movieapp-app.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/app/project-movieapp-real-app.iml" filepath="$PROJECT_DIR$/app/project-movieapp-real-app.iml" group="cse438-assignment3/app" />
->>>>>>> b8d2a462a618c03de937cf9d0eb3f2a6b11418c6
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cse438-assignment3.iml" filepath="$PROJECT_DIR$/cse438-assignment3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/project-movieapp.iml" filepath="$PROJECT_DIR$/.idea/project-movieapp.iml" />
     </modules>
   </component>
 </project>

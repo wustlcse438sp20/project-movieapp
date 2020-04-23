@@ -17,7 +17,6 @@ import com.example.cse438.cse438_assignment2.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.trackinplaylist_layout.view.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class TrackInPlayListAdapterViewHolder(movieItemView: View) : RecyclerView.ViewHolder(movieItemView) {

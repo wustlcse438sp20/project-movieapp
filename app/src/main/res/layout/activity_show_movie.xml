@@ -123,6 +123,8 @@
         android:onClick="back"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="@id/getComment"
+        app:layout_constraintTop_toBottomOf="@id/getComment"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

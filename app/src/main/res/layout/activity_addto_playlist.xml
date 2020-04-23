@@ -36,13 +36,6 @@
         app:layout_constraintTop_toBottomOf="@id/playerLogin">
 
         <!-- TODO: Update blank fragment layout -->
-        <EditText
-            android:id="@+id/movie_rate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Please give a rate between 0 and 10"
-            android:inputType="number" />
 
         <EditText
             android:id="@+id/movie_comment"

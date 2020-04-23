@@ -34,7 +34,7 @@ class AddtoPlaylistActivity : AppCompatActivity() {
                 Toast.makeText(this, "Added Unsucessful!", Toast.LENGTH_SHORT).show()
             } else {
 
-                val movierate = movie_rate.text.toString().toInt()
+                val movierate = 0
                 val comment = movie_comment.text.toString()
                 if (movierate < 0 || movierate > 10 || comment == "") {
                     Toast.makeText(this, "Input invalid", Toast.LENGTH_SHORT).show()
