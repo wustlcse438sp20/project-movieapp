@@ -1,6 +1,7 @@
 package com.example.cse438.cse438_assignment2.Adapter
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.content.Intent
@@ -69,6 +70,7 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         }
 
         itemView.trendImgName.setOnClickListener {
+
             val view = LayoutInflater.from(itemView.context).inflate(R.layout.popup_window, null)
             val popupWindow = PopupWindow(
                 view, // Custom view to show in popup window
