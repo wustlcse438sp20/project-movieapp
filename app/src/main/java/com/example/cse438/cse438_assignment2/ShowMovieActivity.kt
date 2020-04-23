@@ -3,9 +3,12 @@ package com.example.cse438.cse438_assignment2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.core.view.GestureDetectorCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.cse438.cse438_assignment2.Database.*
@@ -28,6 +31,8 @@ class ShowMovieActivity : AppCompatActivity() {
     private var playListViewModel : PlayListViewModel3? = null
     lateinit var name: String
     lateinit var db: FirebaseFirestore
+    private lateinit var mDetector: GestureDetectorCompat
+
     val documentReference by lazy {
         val db = FirebaseFirestore.getInstance()
         return@lazy db.document("players/${FirebaseAuth.getInstance()?.currentUser?.uid}")
@@ -37,6 +42,7 @@ class ShowMovieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_movie)
+        mDetector = GestureDetectorCompat(this, MyGestureListener())
     }
 
     override fun onStart() {
@@ -57,7 +63,7 @@ class ShowMovieActivity : AppCompatActivity() {
         movieDetailReleaseDate.text = "Release Date: " + releaseDate
         movieDetailOverview.text = "Overview: " + overview
 
-        movie_preview.getPlayerUiController().showFullscreenButton(true)
+//        movie_preview.getPlayerUiController().showFullscreenButton(true)
         movie_preview.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
                 var videoId = "jCFWEzIVILc"
@@ -78,8 +84,11 @@ class ShowMovieActivity : AppCompatActivity() {
                 }
 
                 youTubePlayer.cueVideo(videoId, 0f)
+
             }
         })
+
+
         db = FirebaseFirestore.getInstance()
         val settings = FirebaseFirestoreSettings.Builder()
             .setTimestampsInSnapshotsEnabled(true)
@@ -118,6 +127,41 @@ class ShowMovieActivity : AppCompatActivity() {
             val intent = Intent(this, MainpageActivity::class.java)
             startActivity(intent)
         }
+    }
+
+
+    private inner class MyGestureListener : GestureDetector.SimpleOnGestureListener() {
+
+        private var swipedistance = 150
+
+        override fun onDoubleTap(event: MotionEvent?): Boolean {
+            if (!movie_preview.isFullScreen()) {
+                movie_preview.enterFullScreen()
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                // Hide ActionBar
+                if (supportActionBar != null) {
+                    supportActionBar!!.hide()
+                }
+            }
+            return true
+        }
+
+        override fun onFling(
+            e1: MotionEvent,
+            e2: MotionEvent,
+            velocityX: Float,
+            velocityY: Float
+        ): Boolean {
+            if (e1.y - e2.y > swipedistance) { //swipe up
+                return true
+            }
+            return true
+        }
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        mDetector.onTouchEvent(event)
+        return super.onTouchEvent(event)
     }
 
 
