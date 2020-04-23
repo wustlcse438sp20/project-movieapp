@@ -17,6 +17,7 @@ Tab - to make poster back to original size and position
 Swipe Up - move the poster up
 Long Press - enlargen the poster
 Double Click - Play the YouTube Video in Full Screen
+Drag the Poster - Shadow of the Poster on the path
 
 2. Watchlist page
 User can edit watchlist by click on the edit button
