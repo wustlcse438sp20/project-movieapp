@@ -16,28 +16,28 @@
             android:id="@+id/updateplaylistname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:hint="@string/name"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/updateplaylistdescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/disc"
+            android:hint="@string/disc"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/updateplaylistgenre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/plgenre"
+            android:hint="@string/plgenre"
             android:inputType="text" />
 
         <EditText
             android:id="@+id/updateplaylistrating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:hint="0"
             android:inputType="number" />
 
         <RelativeLayout

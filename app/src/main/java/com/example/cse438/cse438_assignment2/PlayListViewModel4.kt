@@ -19,7 +19,7 @@ class PlayListViewModelFactory4(application: Application, email: String): ViewMo
     }
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return PlayListViewModel3(mApplication,mParam) as T
+        return PlayListViewModel4(mApplication,mParam) as T
     }
 }
 
