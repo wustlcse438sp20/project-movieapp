@@ -12,10 +12,11 @@ No. Everything works well.
 
 
 * Is there anything that you did that you feel might be unclear? Explain it here. 
+There are 5 main parts: 
+
 1. Home Page
 Click on Movie Poster - Enter Show Movie Details
 Click on Movie Name - Pop up window show movie overviews
-Seach - Search the movies by name
 
 2. Watchlist page
 Click on the edit button - Edit Watchlist
