@@ -25,9 +25,7 @@ class SeeCommentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val intent = intent.extras
-//        trackname = intent!!.getString("trackname", "")
-//        artist = intent!!.getString("artist", "")
-//        duration = intent!!.getInt("duration", 0)
+
         moviename = intent!!.getString("moviename","")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_comment)
