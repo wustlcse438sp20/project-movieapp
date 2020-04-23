@@ -10,10 +10,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.PopupWindow
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.RecyclerView
@@ -81,6 +78,12 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             // Finally, show the popup window on app
             TransitionManager.beginDelayedTransition(myParent)
             view.popup_overview.text = "Overview: " +overview;
+            view.popup_back.setOnClickListener(){
+                popupWindow.dismiss()
+            }
+            popupWindow.setOnDismissListener {
+                Toast.makeText(myParent.context,"Popup closed",Toast.LENGTH_SHORT).show()
+            }
             popupWindow.showAtLocation(
                 myParent, // Location to display popup window
                 Gravity.CENTER, // Exact position of layout to display popup
