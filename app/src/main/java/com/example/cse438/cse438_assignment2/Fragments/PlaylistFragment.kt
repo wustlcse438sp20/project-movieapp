@@ -118,7 +118,7 @@ class PlaylistFragment : Fragment() {
             rating = dialogView.inputplaylistrating.text.toString().toInt()
 
             if(name == "" || description == "" || genre == "" || rating == 0 ){
-                Toast.makeText(this.context, "Watchlist created Unsucessful! Please enter valid value for all fields.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, "Watchlist created Unsucessful! Please enter valid value (rating need to be positive) for all fields.", Toast.LENGTH_SHORT).show()
             } else {
                 mAlertDialog.dismiss()
                 playListViewModel!!.insert(PlayList(name, description, rating, genre,userEmail))

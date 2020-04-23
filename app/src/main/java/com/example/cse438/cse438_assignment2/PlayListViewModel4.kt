@@ -2,18 +2,15 @@ package com.example.cse438.cse438_assignment2
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.cse438.cse438_assignment2.Database.PlayList
-import com.example.cse438.cse438_assignment2.Database.PlayListRepository
-import com.example.cse438.cse438_assignment2.Database.PlayListRoomDatabase
+import com.example.cse438.cse438_assignment2.Database.*
 import kotlinx.coroutines.launch
 
-
-class PlayListViewModelFactory(application: Application, email: String):ViewModelProvider.NewInstanceFactory(){
+class PlayListViewModelFactory4(application: Application, email: String): ViewModelProvider.NewInstanceFactory(){
     private var mApplication = application
     private var mParam =email
 
 
-    fun PlayListViewModelFactory(
+    fun PlayListViewModelFactory4(
         application: Application,
         param: String
     ) {
@@ -22,11 +19,11 @@ class PlayListViewModelFactory(application: Application, email: String):ViewMode
     }
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return PlayListViewModel(mApplication,mParam) as T
+        return PlayListViewModel3(mApplication,mParam) as T
     }
 }
-class PlayListViewModel(application: Application, email: String) : AndroidViewModel(application) {
 
+class PlayListViewModel4(application: Application, email: String) : AndroidViewModel(application) {
     // The ViewModel maintains a reference to the repository to get data.
     private val repository: PlayListRepository
     var allPlaylists: LiveData<List<PlayList>> = MutableLiveData()
@@ -50,5 +47,4 @@ class PlayListViewModel(application: Application, email: String) : AndroidViewMo
     fun update(name:String, description:String, genre:String, rating:Int, id:Int) = viewModelScope.launch{
         repository.update(name, description, genre, rating, id)
     }
-
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateplaylistActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/updateplaylistname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/updateplaylistdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disc"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/updateplaylistgenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/plgenre"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/updateplaylistrating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:inputType="number" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submitupdateplaylist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Submit" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
