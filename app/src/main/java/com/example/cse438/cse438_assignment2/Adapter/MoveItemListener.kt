@@ -1,5 +1,7 @@
 package com.example.cse438.cse438_assignment2.Adapter
 
+import android.content.Context
+import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
@@ -48,6 +50,8 @@ class MoveItemListener(val dragAdapter : TrackInPlayListAdapter) : ItemTouchHelp
 
     override fun isItemViewSwipeEnabled(): Boolean = false
 
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {}
+    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+
+    }
 
 }

@@ -15,6 +15,7 @@ import com.example.cse438.cse438_assignment2.Database.TrackList
 import com.example.cse438.cse438_assignment2.DeleteTrackListActivity
 import com.example.cse438.cse438_assignment2.R
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.trackinplaylist_layout.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -28,16 +29,8 @@ class TrackInPlayListAdapterViewHolder(movieItemView: View) : RecyclerView.ViewH
     }
 
     fun bind(track: TrackList) {
-        val context = itemView.getContext();
+        val context = itemView.getContext()
         moviename!!.text = track.trackname
-        itemView.setOnClickListener {
-            val intent = Intent(context, DeleteTrackListActivity::class.java)
-            intent.putExtra("tracklistid", track.tracklistid)
-            intent.putExtra("playlistid", track.playlistid)
-            intent.putExtra("moviename", track.trackname)
-            intent.putExtra("playlistname", track.Playlistname)
-            itemView.getContext().startActivity(intent)
-        }
     }
 
 }
@@ -56,14 +49,27 @@ class TrackInPlayListAdapter(private val list: ArrayList<TrackList>?, private va
 
     override fun onBindViewHolder(holder: TrackInPlayListAdapterViewHolder, position: Int) {
         val trackList: TrackList = showtrackLists!!.get(position)
+        val context = holder.itemView.getContext();
+
         holder.bind(trackList)
 
-        holder.itemView.setOnTouchListener { _, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
+        holder.itemView.movie_name.setOnTouchListener { _, event ->
+             if (event.action == MotionEvent.ACTION_DOWN) {
                 this.draglistener.dragItem(holder)
-            }
+             }
+
             return@setOnTouchListener true
         }
+
+        holder.itemView.delImg.setOnClickListener {
+            val intent = Intent(context, DeleteTrackListActivity::class.java)
+            intent.putExtra("tracklistid", trackList.tracklistid)
+            intent.putExtra("playlistid", trackList.playlistid)
+            intent.putExtra("moviename", trackList.trackname)
+            intent.putExtra("playlistname", trackList.Playlistname)
+            holder.itemView.getContext().startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int = list!!.size
