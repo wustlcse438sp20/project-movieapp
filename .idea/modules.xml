@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/app/CSE438-project-movieapp-app.iml" filepath="$PROJECT_DIR$/app/CSE438-project-movieapp-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="cse438-assignment3/app" />
-      <module fileurl="file://$PROJECT_DIR$/cse438-assignment3.iml" filepath="$PROJECT_DIR$/cse438-assignment3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/project-movieapp-app.iml" filepath="$PROJECT_DIR$/app/project-movieapp-app.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cse438-assignment3.iml" filepath="$PROJECT_DIR$/cse438-assignment3.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/project-movieapp.iml" filepath="$PROJECT_DIR$/.idea/project-movieapp.iml" />
->>>>>>> refs/remotes/origin/master
     </modules>
   </component>
 </project>
