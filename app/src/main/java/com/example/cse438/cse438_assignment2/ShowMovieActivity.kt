@@ -138,9 +138,8 @@ class ShowMovieActivity : AppCompatActivity() {
 
     }
 
-    fun back() {
-        val intent = Intent(this, MainpageActivity::class.java)
-        startActivity(intent)
+    fun back(view: View) {
+        onBackPressed()
     }
 
     fun addToPlayList(view: View) {
@@ -193,7 +192,7 @@ class ShowMovieActivity : AppCompatActivity() {
                     supportActionBar!!.hide()
                 }
             } else {
-                back()
+                onBackPressed()
             }
             return true
         }
