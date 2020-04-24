@@ -5,25 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SeeCommentActivity">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/seeCommentRecyclerView"
+
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/seeCommentRecyclerView"
+        android:text="@string/commentrating"
+        android:textSize="30sp"
+        android:id="@+id/commenttitle"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/seeCommentRecyclerView"
         app:layout_constraintTop_toTopOf="parent"
         />
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/seeCommentRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintTop_toBottomOf="@id/commenttitle"
+        />
+
+
+
     <Button
         android:id="@+id/back_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
         android:text="@string/back"
         android:onClick="backtohome"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seeCommentRecyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

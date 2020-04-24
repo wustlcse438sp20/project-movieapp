@@ -93,8 +93,8 @@
         android:layout_marginRight="8dp"
         android:onClick="addToPlayList"
         android:text="@string/add_to_playlist"
-        app:layout_constraintBottom_toBottomOf="@+id/movie_preview"
-        app:layout_constraintBottom_toTopOf="@+id/back_to_home"
+        app:layout_constraintTop_toBottomOf="@+id/movie_preview"
+        app:layout_constraintBottom_toTopOf="@+id/getComment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
     <Button
@@ -105,10 +105,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="8dp"
         android:onClick="getComment"
-        android:text="see comments"
-        app:layout_constraintBottom_toBottomOf="@id/add_playlist"
+        android:text="@string/seecomment"
+        app:layout_constraintTop_toBottomOf="@id/add_playlist"
+        app:layout_constraintBottom_toTopOf="@+id/back_to_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
     <Button
@@ -119,12 +120,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="45dp"
         android:onClick="back"
         android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="@id/getComment"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/getComment"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

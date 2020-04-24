@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cse438.cse438_assignment2.Data.Track
 import com.example.cse438.cse438_assignment2.R
@@ -54,7 +52,7 @@ class TrackViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         }
 
         itemView.trackImgName.setOnClickListener {
-            Toast.makeText(itemView.trackImgName.context, "Please click the image to see the details of the poster", Toast.LENGTH_LONG).show()
+            //Todo: Pop Up Window
         }
     }
 

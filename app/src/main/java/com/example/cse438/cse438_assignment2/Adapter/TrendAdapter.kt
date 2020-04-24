@@ -79,7 +79,7 @@ class TrendViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             )
             // Finally, show the popup window on app
             TransitionManager.beginDelayedTransition(myParent)
-            view.popup_overview.text = "Overview: " + overview;
+            view.popup_overview.text = "Overview: " +overview;
             view.popup_back.setOnClickListener(){
                 popupWindow.dismiss()
             }
