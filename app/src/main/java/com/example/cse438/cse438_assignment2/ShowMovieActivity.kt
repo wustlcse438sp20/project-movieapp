@@ -138,7 +138,7 @@ class ShowMovieActivity : AppCompatActivity() {
 
     }
 
-    fun back(view: View) {
+    fun back() {
         val intent = Intent(this, MainpageActivity::class.java)
         startActivity(intent)
     }
@@ -192,6 +192,8 @@ class ShowMovieActivity : AppCompatActivity() {
                 if (supportActionBar != null) {
                     supportActionBar!!.hide()
                 }
+            } else {
+                back()
             }
             return true
         }

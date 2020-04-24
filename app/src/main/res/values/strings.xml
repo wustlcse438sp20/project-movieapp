@@ -48,4 +48,6 @@
     <string name="deletebutton">DELETE</string>
     <string name="thisispopupwindow">This is a popup window.</string>
     <string name="overview">OVERVIEW</string>
+    <string name="seecomment"> SEE COMMENTS</string>
+    <string name="commentrating">Comments</string>
 </resources>
