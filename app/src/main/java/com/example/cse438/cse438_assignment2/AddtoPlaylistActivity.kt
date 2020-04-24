@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.cse438.cse438_assignment2.Database.TrackList
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 import kotlinx.android.synthetic.main.activity_addto_playlist.*
 
 class AddtoPlaylistActivity : AppCompatActivity() {
@@ -13,7 +16,12 @@ class AddtoPlaylistActivity : AppCompatActivity() {
     private var playlistid: Int = 0
     private var playlistname: String = ""
     private var trackListViewModel: TrackListViewModel? = null
-
+    private var name: String=""
+    lateinit var db: FirebaseFirestore
+    val documentReference by lazy {
+        val db = FirebaseFirestore.getInstance()
+        return@lazy db.document("players/${FirebaseAuth.getInstance()?.currentUser?.uid}")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +43,17 @@ class AddtoPlaylistActivity : AppCompatActivity() {
             } else {
 
                 val movierate = 0
-                val comment = movie_comment.text.toString()
+                var comment = movie_comment.text.toString()
+
                 if (movierate < 0 || movierate > 10 || comment == "") {
                     Toast.makeText(this, "Input invalid", Toast.LENGTH_SHORT).show()
 
                 } else {
+
+                    val email=FirebaseAuth.getInstance()?.currentUser?.email.toString()
+                    name = email.substring(0,email.indexOf('@'))
+                    comment=name+" : "+comment
+
                     trackListViewModel!!.insert(TrackList(playlistname, moviename, playlistid, movierate, comment))
                     Toast.makeText(
                         this,
